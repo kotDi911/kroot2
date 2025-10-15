@@ -86,7 +86,11 @@ const router = Router([
         element: <Navigate to='/error' replace/>,
         errorElement: <RouterApp props={<ErrorPage/>}/>,
     }
-]);
+],
+    {
+        basename: "/kroot",
+    }
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

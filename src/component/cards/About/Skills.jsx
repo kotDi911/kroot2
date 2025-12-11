@@ -6,22 +6,20 @@ const Skills = () => {
     const numbers = useAbout((store) => store.numbers)
     const options = useAbout((store) => store.options)
     return(
-        <section className="container-64">
-            <h2 className="h2 text-center black">
-                Skills
-            </h2>
-            <div className="about__grid mt-16 mb-32">
-                <div className="about__card flex col" style={{gridArea: "numbers"}}>
-                    <div className="about__grid-small">
-                        {numbers.map((item, i) => <NumbersCard key={i} {...item}/>)}
-                    </div>
-                </div>
-                <div className="about__card flex col" style={{gridArea: "options"}}>
-                    <h3 className="h3">What <span className="gray">we do</span></h3>
-                    <CardOptions props={options}/>
+        <>
+            <div className="about__card flex col" style={{gridArea: "options"}}>
+                <h3 className="h3 text-end mr-8r">What we do</h3>
+                <CardOptions props={options} pl="pl-16"/>
+            </div>
+            <div className="about__card flex col" style={{gridArea: "numbers"}}>
+                <h3 className="h3 text-start ml-8r">
+                    Skills
+                </h3>
+                <div className="about__grid-small flex gap-16">
+                    {numbers.map((item, i) => <NumbersCard key={i} {...item}/>)}
                 </div>
             </div>
-        </section>
+        </>
     )
 }
 export default Skills

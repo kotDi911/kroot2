@@ -30,7 +30,7 @@ const Gallery = ({images, path}) => {
     }
 
     return (
-        <div className="gallery__cont mt-32">
+        <div className="gallery__cont mt-32 p-25r">
             {images &&
                 <div className="relative"
                      onClick={() => setPause(false)}

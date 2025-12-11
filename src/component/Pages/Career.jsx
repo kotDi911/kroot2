@@ -20,8 +20,8 @@ const Career = () => {
                 <meta property="og:url" content="https://www.thekroot.com/career/" />
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
-            <section className="container-64">
-                <h1 className="h1 black">CAREERS</h1>
+            <section className="container-64 p_top">
+                <h1 className="h1">CAREERS</h1>
                 <CareerNav/>
                 <Outlet/>
                 {/*<LongButton text="START YOUR PROJECT" url="get_in_touch"/>*/}

@@ -17,10 +17,11 @@
 
 .form {
   &__cont {
+    max-width: 48rem;
     padding: 4rem;
-    background: white;
+    background: #363636;
     border-radius: 25px;
-    margin-top: 2rem;
+    margin: 2rem auto;
   }
 
   &__social {
@@ -32,7 +33,7 @@
 .input {
   &__label {
     width: 100%;
-    color: $black;
+    color: $big_text;
     position: relative;
     margin-bottom: 2rem;
     font-size: 14px;
@@ -43,7 +44,8 @@
     border-radius: 25px;
     padding: 1rem 1.5rem;
     width: 100%;
-    border: 1px solid $border;
+    background: #d1d2d1;
+    border-bottom: 1px solid $border;
     font-size: 16px;
     color: $black;
 

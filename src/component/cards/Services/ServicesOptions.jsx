@@ -6,10 +6,10 @@ const ServicesOptions = ({props}) => {
   return(
       <div className="flex space-b mt-16">
           <div className="flex center">
-              <img className="mark" alt="mark" src={round}/>
+              {/*<img className="mark" alt="mark" src={round}/>*/}
               <p className="regular gray">{text}</p>
           </div>
-          {url && <Link className="services__link regular white" to={url} target="_blank"> &#9654; watch reel</Link>}
+          {/*{url && <Link className="services__link regular white" to={url} target="_blank"> &#9654; watch reel</Link>}*/}
       </div>
   )
 }

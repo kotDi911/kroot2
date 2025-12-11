@@ -4,14 +4,14 @@ import CardOptions from "../CardOptions";
 const Nominations = () => {
     const nominations = useAbout((store) => store.nominations)
     return(
-        <section className="container-64">
-            <h2 className="h2 text-center black">
+        <div className="flex col">
+            <h3 className="h3 text-start ml-8r">
                 Our Awards
-            </h2>
-            <div className="about__card mt-16 mb-32">
-                <CardOptions props={nominations}/>
+            </h3>
+            <div className="about__card mb-32">
+                <CardOptions props={nominations} className="col"/>
             </div>
-        </section>
+        </div>
     )
 }
 export default Nominations

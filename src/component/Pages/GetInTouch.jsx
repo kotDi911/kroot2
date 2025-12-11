@@ -44,8 +44,8 @@ const GetInTouch = () => {
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
             <section className="container-48 relative">
-                <h1 className="h1">Get in <span className="gray">touch</span></h1>
-                <p className="regular gray">{descForm}</p>
+                <h1 className="h1 mb-52">Get in <span className="gray">touch</span></h1>
+                <p className="regular text-center gray">{descForm}</p>
                 <div className="form__cont">
                     <div className="form__social flex">
                         <Social props="light"/>

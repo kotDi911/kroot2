@@ -28,7 +28,7 @@ const Footer = () => {
                 <Link className="logo-mini" to='/'>
                     <img className="logo-img" src={logo} alt="logo"/>
                 </Link>
-                <nav className="nav flex end">
+                <nav className="nav flex">
                     {links.map(link =>
                         <Link className="nav__link flex col center gray"
                               key={link.name} to={`/${link.name === "home" ? "" : link.name}`}>
@@ -40,7 +40,7 @@ const Footer = () => {
                     )}
                 </nav>
                 <div className="social flex">
-                    <Social props="dark"/>
+                    <Social props="light"/>
                 </div>
             </div>
         </footer>

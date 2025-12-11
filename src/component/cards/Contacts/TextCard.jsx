@@ -20,7 +20,7 @@ const ContactInfo = ({props})=>{
                     <span className="btn-bg"></span>
                     <img className="social__img" src={img} alt="icon"/>
                 </div>
-                <p className="regular black">{text}</p>
+                <p className="regular white">{text}</p>
             </Link>
         )
     }
@@ -34,7 +34,8 @@ const TextCard = ({props, areaName}) => {
     return (
         props.map((item, i) =>
             <div key={i} className="contacts__text flex col space-b" style={{gridArea: areaName}}>
-                <h3 className="h3 black mb-8">{item.text}</h3>
+                <h3 className="h3 mb-8">{item.text}</h3>
+                <hr/>
                 <div className="flex col mb-16">
                     {item.options.map((option, i) => <p key={i} className="regular gray mt-16">{option.text}</p>)}
                 </div>

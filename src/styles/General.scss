@@ -1,9 +1,10 @@
+$big_text: #ce8a0d;
 $black: #070707;
 //$text: #9ba1a0;
-$text: #aaaaaa;
+$text: #d3d3d3;
 //$text: #a0a8a6;
-$BG: rgb(235, 241, 245);
-$border: #dee2e5;
+$BG: rgb(10, 10, 10);
+$border: #7f8081;
 $hover: rgba(222, 226, 229, 0.55);
 $darkgray: rgb(105, 105, 105);
 $active: rgba(222, 226, 229, 0.7);
@@ -12,7 +13,12 @@ $active: rgba(222, 226, 229, 0.7);
   box-sizing: border-box;
   margin: 0;
 }
-
+html{
+  scroll-behavior: smooth;
+}
+#root{
+  position: relative;
+}
 body {
   font-family: Inter, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,29 +30,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
-
+.block{
+  display: block;
+}
 .container-80 {
   width: 100%;
-  max-width: 80rem;
+  //max-width: 80rem;
   margin: 0 auto;
 }
 
 .container-64 {
   width: 100%;
-  max-width: 64rem;
+  //max-width: 64rem;
   margin: 0 auto;
 }
 
 .container-48 {
-  width: 100%;
-  max-width: 48rem;
+  width: 64%;
+  //max-width: 48rem;
   margin: 0 auto;
 }
 
 .flex {
   display: flex;
 }
-
+.j-end{
+  justify-content: flex-end;
+}
+.j-start{
+  justify-content: start;
+}
 .col {
   flex-direction: column;
 }
@@ -84,7 +97,18 @@ code {
 .space-a {
   justify-content: space-around;
 }
-
+.b-0{
+  bottom: 0;
+}
+.gap-16{
+  gap: 16px;
+}
+.gap-32{
+  gap: 32px;
+}
+.pl-16{
+  padding-left: 16px;
+}
 .mt-16 {
   margin-top: 16px;
 }
@@ -104,7 +128,12 @@ code {
 .mr-16 {
   margin-right: 16px;
 }
-
+.mr-8r {
+  margin-right: 8rem;
+}
+.ml-8r{
+  margin-left: 8rem;
+}
 .mb-8 {
   margin-bottom: 8px;
 }
@@ -118,7 +147,7 @@ code {
 }
 
 .mb-52 {
-  margin-bottom: 52px;
+  margin-bottom: 52px !important;
 }
 
 .m-52 {
@@ -127,6 +156,15 @@ code {
 
 .p-20{
   padding: 20px;
+}
+.p-25r{
+  padding: 0 2.5rem;
+}
+.p-50{
+  padding: 50px;
+}
+.p_top {
+  padding-top: 12px;
 }
 .w-100 {
   width: 100%;
@@ -140,7 +178,10 @@ code {
 }
 
 //-------------------------------------- TEXT
-
+.text-start {
+  text-align: left;
+  cursor: default;
+}
 .text-center {
   text-align: center;
   cursor: default;
@@ -155,15 +196,15 @@ a {
   text-decoration: none;
 }
 
-a.active {
-  background: $active;
-  color: $black;
-  border-color: $black;
-}
+//a.active {
+//  background: $active;
+//  color: $black;
+//  border-color: $black;
+//}
 
 .h1 {
   font-size: 64px;
-  color: $black;
+  color: $big_text;
   margin: 0;
   text-align: center;
   font-weight: 500;
@@ -174,12 +215,14 @@ a.active {
   font-size: 60px;
   font-weight: 500;
   cursor: default;
+  color: $big_text;
 }
 
 .h3 {
   font-size: 40px;
   font-weight: 500;
   cursor: default;
+  color: $big_text;
 }
 
 .fs-14 {
@@ -188,6 +231,10 @@ a.active {
 
 .fs-20 {
   font-size: 20px;
+}
+.fs-36{
+  font-size: 36px;
+  font-weight: 900;
 }
 
 .fs-56 {
@@ -212,6 +259,9 @@ a.active {
 .gray {
   color: $text;
 }
+.orange{
+  color: $big_text;
+}
 .dark-gray {
   color: $darkgray;
 }
@@ -228,7 +278,7 @@ a.active {
 }
 
 .light {
-  background: $hover;
+  background: rgba(178, 255, 242, 0.3);
 }
 
 .dark {
@@ -251,6 +301,9 @@ a.active {
   &-mini {
     width: 100%;
     cursor: default;
+    & .logo-img{
+      width: 48px;
+    }
   }
 
   &-img {
@@ -283,20 +336,17 @@ a.active {
   }
 }
 .video-cont {
-  border-radius: 25px;
   width: 100%;
-  height: 100%;
-  //object-fit: fill;
-  &.home__card{
-    padding: 0;
-  }
+  overflow: hidden;       /* чтобы видео не вылазило */
+  position: relative;
 }
 .video{
   width: 100%;
   height: 100%;
-  background: $text;
-  border-radius: 25px;
+  background: $black;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .thumb-wrap {
@@ -315,10 +365,6 @@ a.active {
   outline-width: 0;
 }
 
-.main {
-  padding: 0 2.5rem;
-}
-
 .box {
   background: $BG;
   border: 1px solid $border;
@@ -334,16 +380,16 @@ a.active {
   min-height: 4px;
   width: 4px;
   height: 4px;
-  background: $black;
+  background: rgb(178, 255, 242);
   border-radius: 5px;
   margin-right: 3px;
-  background: $text;
+  //background: $text;
 }
 
 .round {
   height: 12px;
   min-width: 12px;
-  border: 3px solid $black;
+  border: 3px solid white;
   border-radius: 50%;
   margin-right: 6px;
 }
@@ -409,7 +455,7 @@ a.active {
 }
 
 .nav__btn:hover {
-  border-color: $black;
+  //border-color: $black;
 
   & .btn {
     &-bg {
@@ -431,7 +477,7 @@ a.active {
 }
 
 .footer .social__cont {
-  border: 1px solid $black;
+  border: 1px solid $text;
 }
 
 .social {
@@ -450,12 +496,12 @@ a.active {
       margin-right: 1rem;
     }
 
-    & .dark ~ .social__img {
-      fill: $black;
+    & .light ~ .social__img {
+      fill: white;
     }
 
     &:hover {
-      & > .dark ~ .social__img {
+      & > .light ~ .social__img {
         fill: white;
       }
 

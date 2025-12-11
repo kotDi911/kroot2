@@ -1,6 +1,11 @@
 import {create} from 'zustand'
 
-let g_kroot = process.env.PUBLIC_URL + "/assets/g_kroot/video/g-kroot.mp4";
+// let g_kroot = process.env.PUBLIC_URL + "/assets/g_kroot/video/";
+// let projects = process.env.PUBLIC_URL + "/assets/video/showreel/projects/";
+
+let g_kroot = "https://thekroot.com/assets/g_kroot/video";
+let projects = "https://thekroot.com/assets/video/showreel/projects";
+
 export const useAbout = create(() => ({
     nominations: [
         {
@@ -51,17 +56,20 @@ export const useAbout = create(() => ({
     ],
     cards: [
         {
-            url: "projects",
+            url: "/projects",
+            name: "projects",
             title: "See our",
             gray: "last work",
             btnText: "all projects",
+            path: projects,
         },
         {
-            url: "generation_kroot",
+            url: "/generation_kroot",
+            name: "g-kroot",
             title: "Generation",
             gray: "Kroot",
             btnText: "generation kroot",
-            src: g_kroot,
+            path: g_kroot,
         },
     ]
 }));

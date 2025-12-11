@@ -36,8 +36,9 @@ const Contacts = () => {
                 <meta property="og:url" content="https://www.thekroot.com/contacts/"/>
                 <meta name="twitter:card" content="summary_large_image"/>
             </Helmet>
-            <section className="container-64">
-                <div className="contacts__grid">
+            <section className="container-64 p_top contacts">
+                <h1 className="h1">Contacts</h1>
+                <div className="contacts__grid p-25r">
                     {cards.map((item, i) =>
                         <RenderCard key={i} item={item}/>
                     )}

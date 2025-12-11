@@ -1,4 +1,4 @@
-const videoPreview = process.env.PUBLIC_URL + "/assets/g_kroot/video/g-kroot.mp4";
+const videoPreview = process.env.PUBLIC_URL + "/assets/g_kroot/video/g-kroot_1080.mp4";
 
 const PreviewSection = () => {
     return (

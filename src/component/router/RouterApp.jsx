@@ -20,7 +20,7 @@ const RouterApp = ({props}) => {
         <>
             {header}
             {props}
-            {footer}
+            {pathname !== "/" && footer}
         </>
     );
 }

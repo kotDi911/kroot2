@@ -18,6 +18,13 @@ const GetInTouchForm = ({sentMail}) => {
             email: "",
             phone: "",
             company: "",
+            budget: "",
+            timeline: "",
+            startDate: "",
+            deadline: "",
+            linkTreatment: "",
+            linkEdit: "",
+            runtime: "",
             message: "",
         },
         validationSchema: Yup.object({
@@ -40,6 +47,41 @@ const GetInTouchForm = ({sentMail}) => {
                     "Enter valid phone number. +1234567890"
                 ),
             company: Yup.string()
+                .matches(
+                    /^[\w -]+$/,
+                    "Company name can only contain: letters, numbers, space, and symbols:'-','_'"
+                ),
+            budget: Yup.string()
+                .matches(
+                    /^[\w -]+$/,
+                    "Company name can only contain: letters, numbers, space, and symbols:'-','_'"
+                ),
+            timeline: Yup.string()
+                .matches(
+                    /^[\w -]+$/,
+                    "Company name can only contain: letters, numbers, space, and symbols:'-','_'"
+                ),
+            startDate: Yup.string()
+                .matches(
+                    /^[\w -]+$/,
+                    "Company name can only contain: letters, numbers, space, and symbols:'-','_'"
+                ),
+            deadline: Yup.string()
+                .matches(
+                    /^[\w -]+$/,
+                    "Company name can only contain: letters, numbers, space, and symbols:'-','_'"
+                ),
+            linkTreatment: Yup.string()
+                .matches(
+                    // /^[\w -]+$/,
+                    // "Company name can only contain: letters, numbers, space, and symbols:'-','_'"
+                ),
+            linkEdit: Yup.string()
+                .matches(
+                    /^[\w -]+$/,
+                    "Company name can only contain: letters, numbers, space, and symbols:'-','_'"
+                ),
+            runtime: Yup.string()
                 .matches(
                     /^[\w -]+$/,
                     "Company name can only contain: letters, numbers, space, and symbols:'-','_'"
@@ -143,54 +185,54 @@ const GetInTouchForm = ({sentMail}) => {
             />
             <div className="flex col-gap">
                 <Input
-                    id="firstName"
-                    name="firstName"
+                    id="budget"
+                    name="budget"
                     type="text"
                     label="What's your budget?*"
-                    placeholder="Enter your first name"
+                    placeholder="Enter your budget"
                     onChange={handleChange}
-                    value={values.firstName}
+                    value={values.budget}
                     onBlur={handleBlur}
-                    touched={touched.firstName}
-                    errors={errors.firstName}
+                    touched={touched.budget}
+                    errors={errors.budget}
                 />
                 <Input
-                    id="lastName"
-                    name="lastName"
+                    id="timeline"
+                    name="timeline"
                     type="text"
                     label="What's your timeline?*"
-                    placeholder="Enter your last name"
+                    placeholder="Enter your timeline"
                     onChange={handleChange}
-                    value={values.lastName}
+                    value={values.timeline}
                     onBlur={handleBlur}
-                    touched={touched.lastName}
-                    errors={errors.lastName}
+                    touched={touched.timeline}
+                    errors={errors.timeline}
                 />
             </div>
             <div className="flex col-gap">
                 <Input
-                    id="firstName"
-                    name="firstName"
+                    id="startDate"
+                    name="startDate"
                     type="text"
                     label="What's your start date?"
-                    placeholder="Enter your first name"
+                    placeholder="dd.mm.yyyy"
                     onChange={handleChange}
-                    value={values.firstName}
+                    value={values.startDate}
                     onBlur={handleBlur}
-                    touched={touched.firstName}
-                    errors={errors.firstName}
+                    touched={touched.startDate}
+                    errors={errors.startDate}
                 />
                 <Input
-                    id="lastName"
-                    name="lastName"
+                    id="deadline"
+                    name="deadline"
                     type="text"
                     label="What's your deadline date?"
                     placeholder="dd.mm.yyyy"
                     onChange={handleChange}
-                    value={values.lastName}
+                    value={values.deadline}
                     onBlur={handleBlur}
-                    touched={touched.lastName}
-                    errors={errors.lastName}
+                    touched={touched.deadline}
+                    errors={errors.deadline}
                 />
             </div>
             <Input
@@ -200,10 +242,10 @@ const GetInTouchForm = ({sentMail}) => {
                 label="Link to your video treatment"
                 placeholder="https://example.com/treatment"
                 onChange={handleChange}
-                value={values.company}
+                value={values.linkTreatment}
                 onBlur={handleBlur}
-                touched={touched.company}
-                errors={errors.company}
+                touched={touched.linkTreatment}
+                errors={errors.linkTreatment}
             />
             <Input
                 id="videoEdit"
@@ -212,22 +254,22 @@ const GetInTouchForm = ({sentMail}) => {
                 label="Link to your video edit"
                 placeholder="https://example.com/video"
                 onChange={handleChange}
-                value={values.company}
+                value={values.linkEdit}
                 onBlur={handleBlur}
-                touched={touched.company}
-                errors={errors.company}
+                touched={touched.linkEdit}
+                errors={errors.linkEdit}
             />
             <Input
-                id="noVideo"
-                name="noVideo"
+                id="runtime"
+                name="runtime"
                 type="text"
                 label="If no edit, please include the expected runtime of the upcoming video"
                 placeholder="(MV) 02:30 or (ADV) :60+ :15 :30 cutdowns"
                 onChange={handleChange}
-                value={values.company}
+                value={values.runtime}
                 onBlur={handleBlur}
-                touched={touched.company}
-                errors={errors.company}
+                touched={touched.runtime}
+                errors={errors.runtime}
             />
             <label htmlFor="message" className="input__label">Do you have any wishes or comments?</label>
             <textarea

@@ -1,22 +1,32 @@
 .nav {
   &__cont {
     padding: 2rem;
-    background: white;
-    border-radius: 25px;
+    //background: white;
+    //border-radius: 25px;
     margin: 2rem 0 1rem;
   }
 
   &__btn {
     position: relative;
     width: 25%;
-    border: 1px solid #dee2e5;
-    border-radius: 20px;
+    border-bottom: 4px solid white;
+    //border-radius: 20px;
     padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     color: $text;
+    &:hover{
+      border-color: #264619;
+    }
+    &.active{
+      color: $big_text;
+      border-color: #42792c;
+    }
+  }
+  &__text{
+    text-align: center;
   }
 }
 
@@ -24,21 +34,22 @@
   &__cards {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    padding: 0 2rem;
   }
 
   &__card {
-    background: white;
+    background: #313336;
     padding: 1rem 2rem;
-    border-radius: 25px;
+    //border-radius: 25px;
   }
 }
 
 .apps {
   &__cont {
-    margin-top: 2rem;
-    padding: 2rem;
-    background: white;
-    border-radius: 25px;
+    margin: 2rem 2rem 0 2rem;
+    padding: 2rem 0;
+    //background: white;
+    //border-radius: 25px;
   }
 
   &__img {

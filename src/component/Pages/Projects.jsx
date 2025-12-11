@@ -7,6 +7,24 @@ import ToggleFilterBtn from "../cards/Projects/ToggleFilterBtn";
 import {Helmet} from "react-helmet-async";
 import {useUrl} from "../store/Urls";
 
+function getCardSize(i) {
+    let caseNum = ((i - 1) % 6) + 1;
+    switch (caseNum) {
+        case 1:
+            return "s";
+        case 2:
+            return "l";
+        case 3:
+            return "m";
+        case 4:
+            return "ss";
+        case 5:
+            return "xxl";
+        default:
+            return "xl";
+    }
+}
+
 let arrayForHoldingPosts = [];
 let filteredProjects = [];
 
@@ -50,9 +68,10 @@ const Projects = () => {
 
     const card = useMemo(() => {
         return (
-            postsToShow.map((item, i) =>
-                <ProjectsCard key={i} props={item}/>
-            )
+            postsToShow.map((item, i) => {
+                const size = getCardSize(i);
+                return <ProjectsCard key={i} props={item} size={size}/>;
+            })
         )
     }, [postsToShow])
 
@@ -117,7 +136,7 @@ const Projects = () => {
         const handleFilter = async (filter) => {
             arrayForHoldingPosts = [];
             filteredProjects = projects.filter(project =>
-                 project.filter.includes(filter) || filter === "all"
+                    project.filter.includes(filter) || filter === "all"
                 // project.filter === filter || filter === "all"
             );
             loopWithSlice(0, window.innerHeight > 1200 ? 9 + next : next)
@@ -174,7 +193,7 @@ const Projects = () => {
                         setIsLoading(false)
                     }
                 }
-                if(scrollPage !== currentPage){
+                if (scrollPage !== currentPage) {
                     setNext(next + postsPerPage)
                 }
             }

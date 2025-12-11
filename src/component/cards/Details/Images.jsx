@@ -8,7 +8,7 @@ const Images = ({getImages, name}) => {
     const [style, setStyle] = useState({filter: "blur(.2rem)"})
 
     return (
-        <div className="img-cont flex col mt-32">
+        <div className="img-cont flex col mt-32 p-25r">
             {
                 images.map((img, i) =>
                     <div className="w-100 h-100 images-cont" style={style} key={i}>

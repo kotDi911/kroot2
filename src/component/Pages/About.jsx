@@ -1,22 +1,21 @@
+import {Helmet} from "react-helmet-async";
 import MainImgCard from "../cards/About/MainImgCard";
 import Skills from "../cards/About/Skills";
-import LongButton from "../LongButton";
-import HomeCard from "../cards/HomeCard";
 import {useAbout} from "../store/about";
-import {Helmet} from "react-helmet";
-import Button from "../Button";
-import {Link} from "react-router-dom";
-import {useState} from "react";
+import Nominations from "../cards/About/Nominations";
+import OurServices from "../cards/About/OurServices";
+import VideoSource from "../cards/VideoSource";
+import VideoCard from "../cards/VideoCard";
 
 const map = process.env.PUBLIC_URL + "/assets/images/vector-world-map.png";
-const red_d = process.env.PUBLIC_URL + "/assets/images/red_rock_d.jpg";
-const red_m = process.env.PUBLIC_URL + "/assets/images/red_rock_m.jpg";
-
+const URL = "https://thekroot.com/assets/g_kroot/video";
+const URL2 = "https://thekroot.com/assets/video";
+const availableWidths = [1080];
 const About = () => {
     const cards = useAbout((store) => store.cards)
-    const [redImg] = useState(window.innerWidth >= 545 ? red_d : red_m)
+
     return (
-        <main className="main about">
+        <main className="main services">
             <Helmet>
                 <title>About - The Kroot</title>
                 <meta content="About The Kroot company" property="og:title"/>
@@ -33,50 +32,32 @@ const About = () => {
                 <meta property="og:url" content="https://www.thekroot.com/about/"/>
                 <meta name="twitter:card" content="summary_large_image"/>
             </Helmet>
-            <section className="container-80">
-                <h1 className="h1 black">
-                    About <span className="gray">us</span>
-                </h1>
-                <MainImgCard/>
-                <img className="img" src={redImg} style={{borderRadius: "25px"}} alt="Winner Red Rock"/>
-                <Skills/>
+            <MainImgCard/>
+            <section className="container-64 flex col mb-32 relative">
+                <div className="absolute flex col nom space-b">
+                    <Nominations/>
+                    <Skills/>
+                </div>
+                <VideoSource path={URL} name="g-kroot" className="home-video" width={availableWidths}/>
+            </section>
+            <section className="container-64 relative">
+                <OurServices/>
+                <VideoSource path={URL2} name="roto" className="home-video" width={availableWidths}/>
+            </section>
+            <section className="container-64 p-25r mt-32">
+                <h2 className="h2 text-center">
+                    Locations
+                </h2>
                 <img className="img mb-52 mt-32" src={map} alt=""/>
-                {/*<AboutTeam/>*/}
-                <LongButton text="join our team" url="career"/>
-                <div className="about__grid-cards mt-112">
+            </section>
+            {/*<section className="container-64">*/}
+            {/*    <AboutTeam/>*/}
+            {/*</section>*/}
+            <section className="container-64">
+                <div className="flex gap-16 mt-112 w-100 p-25r">
                     {cards.map((card, i) =>
-                        // <HomeCard key={i} props={card}/>)
-                        !card.src ?
-                            <HomeCard key={i} props={card}/>
-                            :
-                            <Link key={i} to={`/${card.url}`}
-                                // target="_blank"
-                                  className={`main__card flex end relative hover__card`} // disabled-link
-                                // style={{gridArea: name ? name : ""}}
-                            >
-                                <div className="video-cont">
-                                    <video
-                                        className="video"
-                                        // poster={poster}
-                                        src={card.src}
-                                        autoPlay
-                                        muted
-                                        loop
-                                        playsInline
-                                        controls={false}
-                                        preload="none"
-                                    />
-                                </div>
-                                <div className="absolute w-100">
-                                    <div className="flex end space-b projects__btn">
-                                        <div className="flex center projects__text">
-                                            <span className="fs-20 white">{card.btnText.toUpperCase()}</span>
-                                        </div>
-                                        <Button color={true}/>
-                                    </div>
-                                </div>
-                            </Link>)
-                    }
+                       <VideoCard key={i} props={card}/>
+                    )}
                 </div>
             </section>
         </main>

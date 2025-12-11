@@ -11,6 +11,7 @@ export const useCards = create((set, get) => ({
             {name: "tv show"},
         ],
         projects: [],
+        postsToShow: [],
         currentPage: 1,
         setProjectsData: (data) => {
             set(() => ({projects: [...data]}));

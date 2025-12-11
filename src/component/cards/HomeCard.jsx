@@ -1,56 +1,40 @@
 import {Link} from "react-router-dom";
-import Social from "../Social";
-import Button from "../Button";
-
-const light = "#9ba1a0"
+import {useEffect, useState} from "react";
+import VideoSource from "./VideoSource";
+const availableWidths = [480, 720, 1080];
 
 const HomeCard = ({props}) => {
-    const {name, url, title, gray, btnText, social} = props;
+    const {id, name, btnText, path, url, img, title, end, description} = props;
+    const [text, setText] = useState(btnText);
+    const errText = "this project does not have " + btnText + " or is in the making"
+    useEffect(() => {
+        if (!url) {
+            setText(errText)
+        }
+    }, [name, url]);
 
     return (
-        <div className={`${url === "generation_kroot" ? "g_kroot" : ""} main__card relative`}
-             style={{gridArea: name ? name : ""}}
+        <Link to={url === "" ? "/error" : url}
+              target={url === "projects" || url === "about" ? "" : "_blank"}
+              className={`${url === "" ? "disabled-link" : ""} home__card-${id} home-video-cont  block`}
         >
-            <Link className={`home__card flex col hover__card relative`} to={`/${url}`}>
-                {
-                    name !== "get_in_touch"
-                        ?
-                        <div className="home__card-title flex col">
-                            {
-                                title && <h3 className={`title ${name === "contacts" ? "fs-56" : "h3"}`}>
-                                    {title} <span className="gray">{gray}</span>
-                                </h3>
-                            }
-                        </div>
-                        :
-                        <div className="home__card-title flex col" style={{textAlign: "center"}}>
-                            {
-                                title && <h3 className={`title fs-56`}>
-                                    {title} <span className="gray">{gray}</span>
-                                </h3>
-                            }
-                        </div>
-                }
-                <div className="w-100 absolute home__card-text-cont" style={{justifyContent: social ? "flex-end" : ""}}>
-                    <div className={`flex end ${social ? "space-end" : "space-b"}`}>
-                        {btnText &&
-                            <div className="flex center">
-                                <div className="dot"/>
-                                <div className="small" style={{color: light}}>
-                                    {btnText.toUpperCase()}
-                                </div>
-                            </div>
-                        }
-                        <Button/>
+            {!title ?
+                <VideoSource path={path} name={name} className={`home-video`} text={text} width={availableWidths}/>
+                :
+                <div className="home-video relative darken">
+                    <img src={img} alt="name" className="home-img"/>
+                    <div className="home__card-title flex col absolute space-b ">
+                        <h3 className="h3 white">
+                            {title}
+                        </h3>
+                        <p className="white regular text-center">
+                            {description}
+                        </p>
+                        <span className="fs-56 white text-end">{end}</span>
                     </div>
                 </div>
-            </Link>
-            {social &&
-                <div className="home__social social flex absolute">
-                    <Social props="light"/>
-                </div>
             }
-        </div>
+        </Link>
     )
 }
 export default HomeCard

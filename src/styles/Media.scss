@@ -11,9 +11,6 @@
   .filter__grid {
     gap: 8px;
   }
-  .gallery__card {
-    height: 34rem;
-  }
   .logo {
     padding: 10px;
   }
@@ -22,9 +19,6 @@
   }
   .footer.active {
     padding: 1rem 2.5rem;
-  }
-  .projects__card{
-    min-height: 14rem;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -37,10 +31,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .gallery__card {
-    height: 30rem;
-  }
-  .home__grid, .about__grid-cards{
+  .about__grid-cards{
     grid-auto-rows: 18rem;
   }
   .images-cont {
@@ -65,7 +56,7 @@
         "numbers"
         "options";
   }
-  .about__grid, .about__grid-cards, .home__grid, .details__grid, .generation__grid-cards {
+  .about__grid, .about__grid-cards, .details__grid, .generation__grid-cards {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -104,24 +95,7 @@
   .about__main-img {
     min-height: 18rem;
   }
-  .home {
-    &__grid {
-      grid-auto-rows: 22rem;
-      grid-template-areas:
-  "commercial"
-  "music"
-  "about"
-  "projects"
-  "get_in_touch"
-  "beauty"
-  "contacts";
-    }
-  }
   .projects {
-    &__grid {
-      grid-template-columns: 1fr 1fr;;
-    }
-
     &__btn {
       padding: 1.5rem;
     }
@@ -151,12 +125,6 @@
   .filter__grid {
     gap: 0;
   }
-  .gallery__card {
-    height: 28rem;
-  }
-  .main {
-    padding: 0 2rem;
-  }
   .carousel__dot {
     width: .75rem;
     height: .75rem;
@@ -169,6 +137,7 @@
 @media screen and (max-width: 767px) {
   .form {
     &__cont {
+      width: 48%;
       padding: 3rem;
     }
 
@@ -183,7 +152,7 @@
   .long-btn {
     padding: 1.5rem;
   }
-  .home__grid, .details__grid, .about__grid-cards {
+  .details__grid, .about__grid-cards {
     grid-auto-rows: 20rem;
   }
   .about {
@@ -224,9 +193,6 @@
   .filter__btn {
     width: 30%;
   }
-  .gallery__card {
-    height: 22rem;
-  }
   .long-btn-text {
     font-size: 38px;
   }
@@ -246,16 +212,10 @@
   .work__card .options {
     margin-left: 1.5rem;
   }
-  .gallery__card {
-    height: 20rem;
-  }
   .contacts__photo{
       align-self: center;
       width: 100%;
 
-  }
-  .projects__grid {
-    grid-template-columns: 1fr;
   }
   .long-btn-text {
     font-size: 36px;
@@ -298,7 +258,7 @@
   .section {
     padding: 0 5vw;
   }
-  .home__grid, .details__grid, .about__grid-cards {
+  .details__grid, .about__grid-cards {
     grid-auto-rows: 18rem;
   }
   .contacts__text, .contacts {
@@ -346,9 +306,6 @@
   .generation__grid-links {
     grid-template-columns: repeat(2, 1fr);
   }
-  .gallery__card {
-    height: 18rem;
-  }
   .carousel__dot {
     width: .65rem;
     height: .65rem;
@@ -377,9 +334,6 @@
   .h3 {
     font-size: 32px;
   }
-  .main {
-    padding: 0 1.25rem;
-  }
   .apps__cont, .career__card {
     padding: 1rem 1.25rem;
   }
@@ -403,9 +357,6 @@
       }
     }
 
-    &__grid{
-      grid-auto-rows: 16rem;
-    }
     &__social {
       bottom: 1.5rem;
       left: 1rem;
@@ -447,9 +398,6 @@
   .work__card .options {
     margin-left: 0;
   }
-  .gallery__card {
-    height: 14rem;
-  }
   .images-cont {
     padding: 0.8rem 0.8rem;
   }
@@ -469,9 +417,6 @@
 @media screen and (max-width: 375px) {
   .social__cont:not(:last-child) {
     margin-right: .5rem;
-  }
-  .gallery__card {
-    height: 12rem;
   }
   .long-btn-text {
     font-size: 22px;

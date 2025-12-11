@@ -107,7 +107,7 @@ export const useServiceCard = create(() => ({
             ico: cgi,
             title: "AI",
             desc: (<>We use AI-powered tools as part of our creative process —
-                to spark ideas, explore visual directions, and help elevate your project in unexpected ways.
+                to spark ideas,<br/> explore visual directions, and help elevate your project in unexpected ways.
                 <br/>
                 <br/>
                 Reel — coming soon.

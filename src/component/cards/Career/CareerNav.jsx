@@ -34,7 +34,7 @@ const CareerNav = () => {
 
     return (
         <div className="nav__cont">
-            <h3 className="h3 text-center black">Location</h3>
+            <h3 className="h3 text-center gray">Location</h3>
             <nav className="nav flex space-a mt-16">
                 {links.map((link, i) => (
                     <NavLink
@@ -42,12 +42,12 @@ const CareerNav = () => {
                         className={({isActive}) => isActive ? "nav__btn active" : "nav__btn"}
                         key={i}
                     >
-                        <span className="btn-bg"/>
+                        {/*<span className="btn-bg"/>*/}
                         {link.name}
                     </NavLink>
                 ))}
             </nav>
-            <p className="nav__text regular gray mt-16">
+            <p className="nav__text regular gray mt-32">
                 {desc}
             </p>
         </div>

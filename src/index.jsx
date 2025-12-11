@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import RouterApp from "./component/router/RouterApp";
-import {createBrowserRouter as Router, Navigate, RouterProvider} from "react-router-dom";
+import {createHashRouter as Router, Navigate, RouterProvider} from "react-router-dom";
+// import {createBrowserRouter as Router, Navigate, RouterProvider} from "react-router-dom";
 import Home from "./component/Pages/Home";
-import About from "./component/Pages/About";
 import ErrorPage from "./component/Pages/ErrorPage";
-import Services from "./component/Pages/Services";
 import Projects from "./component/Pages/Projects";
 import Details from "./component/Pages/Details";
 import Contacts from "./component/Pages/Contacts";
@@ -16,8 +15,7 @@ import Generation from "./component/Pages/Generation";
 import GetInTouch from "./component/Pages/GetInTouch";
 import {HelmetProvider} from "react-helmet-async";
 import {loaderDetails} from "./component/loaders/LoaderDetails";
-import Services1 from "./component/Pages/Services1";
-import Services2 from "./component/Pages/Services2";
+import About from "./component/Pages/About";
 
 const router = Router([
     {
@@ -27,14 +25,9 @@ const router = Router([
     },
     {
         path: "/about",
-        element: <RouterApp props={<Services2/>}/>,
+        element: <RouterApp props={<About/>}/>,
         errorElement: <RouterApp props={<ErrorPage/>}/>,
     },
-    // {
-    //     path: "/services",
-    //     element: <RouterApp props={<Services2/>}/>,
-    //     errorElement: <RouterApp props={<ErrorPage/>}/>,
-    // },
     {
         path: "/projects",
         children: [
@@ -86,7 +79,11 @@ const router = Router([
         element: <Navigate to='/error' replace/>,
         errorElement: <RouterApp props={<ErrorPage/>}/>,
     }
-]);
+],
+    // {
+    //     basename: "/kroot2",
+    // }
+    );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

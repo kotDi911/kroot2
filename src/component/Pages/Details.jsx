@@ -1,5 +1,3 @@
-import HomeCard from "../cards/HomeCard";
-import VideoCard from "../cards/VideoCard";
 import Gallery from "../cards/Details/Gallery";
 import Title from "../cards/Details/Title";
 import Images from "../cards/Details/Images";
@@ -8,6 +6,7 @@ import {Helmet} from "react-helmet-async";
 import {useLoaderData} from "react-router";
 import {useUrl} from "../store/Urls";
 import {useMemo} from "react";
+import VideoCardDetails from "../cards/VideoCardDetails";
 
 const Details = () => {
     const projectsUrl = useUrl((store) => store.projectsUrl)
@@ -22,31 +21,30 @@ const Details = () => {
         options,
         path,
     } = project;
-
     const folderUrl = projectsUrl + path
     const getBtnVideo = useMemo(() => {
         return buttons_url
             ? Object.entries(buttons_url).map(([name, {url, video, btn_text}]) => ({
                 name,
                 url,
+                path,
                 video,
                 btnText: btn_text,
-                poster: `${folderUrl}/video/poster.jpg`,
             }))
             : [
                 {
                     name: "breakdown",
                     url: "",
+                    path: "",
                     video: "",
                     btnText: "VFX Breakdown",
-                    poster: "",
                 },
                 {
                     name: "Official video",
                     url: "",
+                    path: "",
                     video: "",
                     btnText: "Official video",
-                    poster: "",
                 },
             ];
     }, [buttons_url, folderUrl]);
@@ -72,7 +70,7 @@ const Details = () => {
                 <meta content={`Project ${project_name}`} property="twitter:title"/>
                 <meta name="description" content={`Project ${project_name}`}/>
             </Helmet>
-            <section className="container-80">
+            <section className="container-80 p_top">
                 <Title title={project_name}/>
                 <p className="regular gray mt-16">{description}</p>
                 <Images getImages={getMainImages} name={project_name}/>
@@ -80,9 +78,8 @@ const Details = () => {
                 <Options data={getDataArr}/>
             </section>
             <section className="container-80">
-                <div className="details__grid mt-112">
-                    <HomeCard props={{name: "projects", url: "projects", title: "Projects", btnText: "all projects"}}/>
-                    {getBtnVideo.map((card, i) => <VideoCard key={i} props={card}/>)}
+                <div className="flex gap-16 mt-112 p-25r">
+                    {getBtnVideo.map((card, i) => <VideoCardDetails key={i} props={card}/>)}
                 </div>
             </section>
         </main>

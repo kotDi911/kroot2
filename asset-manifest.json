@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/kroot2/static/css/main.e8bb5e03.css",
+    "main.js": "/kroot2/static/js/main.7e42630f.js",
+    "static/media/insta.svg": "/kroot2/static/media/insta.1f2ca33b4d64d5fe226741a73690d774.svg",
+    "static/media/youtube.svg": "/kroot2/static/media/youtube.0d5e0d931cd9a5cdb7766587458de70b.svg",
+    "static/media/fb.svg": "/kroot2/static/media/fb.96371725056f86fef0ecd075e473527c.svg",
+    "index.html": "/kroot2/index.html",
+    "static/media/arrow.svg": "/kroot2/static/media/arrow.12db161eb50a52c1252b6d62445cd49d.svg",
+    "main.e8bb5e03.css.map": "/kroot2/static/css/main.e8bb5e03.css.map",
+    "main.7e42630f.js.map": "/kroot2/static/js/main.7e42630f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8bb5e03.css",
+    "static/js/main.7e42630f.js"
+  ]
+}

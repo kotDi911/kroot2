@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.d3e0f203.css",
-    "main.js": "/static/js/main.13ff7c6b.js",
-    "static/media/insta.svg": "/static/media/insta.1f2ca33b4d64d5fe226741a73690d774.svg",
-    "static/media/youtube.svg": "/static/media/youtube.0d5e0d931cd9a5cdb7766587458de70b.svg",
-    "static/media/fb.svg": "/static/media/fb.96371725056f86fef0ecd075e473527c.svg",
-    "index.html": "/index.html",
-    "static/media/arrow.svg": "/static/media/arrow.12db161eb50a52c1252b6d62445cd49d.svg",
-    "main.d3e0f203.css.map": "/static/css/main.d3e0f203.css.map",
-    "main.13ff7c6b.js.map": "/static/js/main.13ff7c6b.js.map"
+    "main.css": "/kroot2/static/css/main.7f2179bc.css",
+    "main.js": "/kroot2/static/js/main.648004db.js",
+    "static/media/insta.svg": "/kroot2/static/media/insta.1f2ca33b4d64d5fe226741a73690d774.svg",
+    "static/media/youtube.svg": "/kroot2/static/media/youtube.0d5e0d931cd9a5cdb7766587458de70b.svg",
+    "static/media/fb.svg": "/kroot2/static/media/fb.96371725056f86fef0ecd075e473527c.svg",
+    "index.html": "/kroot2/index.html",
+    "static/media/arrow.svg": "/kroot2/static/media/arrow.12db161eb50a52c1252b6d62445cd49d.svg",
+    "main.7f2179bc.css.map": "/kroot2/static/css/main.7f2179bc.css.map",
+    "main.648004db.js.map": "/kroot2/static/js/main.648004db.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3e0f203.css",
-    "static/js/main.13ff7c6b.js"
+    "static/css/main.7f2179bc.css",
+    "static/js/main.648004db.js"
   ]
 }

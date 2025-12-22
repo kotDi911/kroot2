@@ -2,12 +2,12 @@ import PreviewSection from "../cards/Generation/PreviewSection";
 import KrootSection from "../cards/Generation/KrootSection";
 import MasterclassSection from "../cards/Generation/MasterclassSection";
 import WorkshopSection from "../cards/Generation/WorkshopSection";
-import SupervisorsSection from "../cards/Generation/SupervisorsSection";
+// import SupervisorsSection from "../cards/Generation/SupervisorsSection";
 import {Helmet} from "react-helmet";
 
 const Generation = () => {
     return (
-        <main className="main generation">
+        <main className="main generation p-25r">
             <Helmet>
                 <title>Generation Kroot</title>
                 <meta content="Generation Kroot" property="og:title"/>
@@ -23,7 +23,7 @@ const Generation = () => {
             <KrootSection/>
             <MasterclassSection/>
             <WorkshopSection/>
-            <SupervisorsSection/>
+            {/*<SupervisorsSection/>*/}
         </main>
     )
 }

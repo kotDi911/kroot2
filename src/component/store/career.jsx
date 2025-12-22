@@ -20,7 +20,7 @@ export const useCareer = create((set, get) => ({
 
     fetchVacancy: async () => {
         try {
-            const resVacancy = await fetch("https://api.thekroot.com/wp-json/acf/v3/career");
+            const resVacancy = await fetch("https://api.thekroot.com/wp-json/acf/v3/career?per_page=50");
             if (!resVacancy.ok) throw new Response("Failed to fetch vacancies.", {status: 404, statusText: "Failed to fetch vacancies."})
 
             const data = await resVacancy.json();
@@ -41,7 +41,13 @@ export const useCareer = create((set, get) => ({
         } catch (err) {
             set({error: {status: err.status, msg: err.statusText}})
             console.error('Error fetching vacancies:', err.statusText, err.status);
-            // set({ vacancy: [], us: [], ua: [], eu: [] }); // Сбросить данные в случае ошибки
         }
     },
+    setError: (err)=>{
+        if(err){
+            set({error: {status: 404, msg: "No vacancies found."}})
+        }else {
+            set({error: null})
+        }
+    }
 }));

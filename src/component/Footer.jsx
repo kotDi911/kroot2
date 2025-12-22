@@ -25,9 +25,11 @@ const Footer = () => {
     return (
         <footer className={`${isActive ? "/*active*/" : ""} footer flex col`}>
             <div className="flex center space-b">
-                <Link className="logo-mini" to='/'>
-                    <img className="logo-img" src={logo} alt="logo"/>
-                </Link>
+                <div className="logo-mini-cont">
+                    <Link className="logo-mini" to='/'>
+                        <img className="logo-img" src={logo} alt="logo"/>
+                    </Link>
+                </div>
                 <nav className="nav flex">
                     {links.map(link =>
                         <Link className="nav__link flex col center gray"

@@ -3,8 +3,12 @@ import CareerNav from "../cards/Career/CareerNav";
 import LongButton from "../LongButton";
 import AppsCard from "../cards/Career/AppsCard";
 import {Helmet} from "react-helmet";
+import {useEffect} from "react";
 
 const Career = () => {
+    useEffect(()=>{
+
+    })
     return (
         <main className="main career">
             <Helmet>
@@ -21,10 +25,9 @@ const Career = () => {
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
             <section className="container-64 p_top">
-                <h1 className="h1">CAREERS</h1>
+                <h1 className="h1">Career</h1>
                 <CareerNav/>
                 <Outlet/>
-                {/*<LongButton text="START YOUR PROJECT" url="get_in_touch"/>*/}
                 <AppsCard/>
             </section>
         </main>

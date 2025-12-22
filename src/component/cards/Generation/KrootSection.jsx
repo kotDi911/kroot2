@@ -12,7 +12,7 @@ const KrootSection = () => {
     return (
         <section className="container-80">
             <h2 className="h2 gray mt-52 mb-32">
-                <span className="black">G.</span>
+                <span className="orange">G.</span>
                 Kroot
             </h2>
             {krootText.map((item, i) => <TextP key={i} text={item.text}/>)}

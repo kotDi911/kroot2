@@ -21,7 +21,7 @@ const VideoCardDetails = ({props}) => {
         >
             <VideoSource path={video} name={name} className="about-video" width={[720]}/>
             {/*<div className="absolute w-100">*/}
-            <span className="fs-20 white video__card-text">{btnText.toUpperCase()}</span>
+            <span className="fs-20 white video__card-text">{text.toUpperCase()}</span>
             {/*</div>*/}
         </Link>
     )

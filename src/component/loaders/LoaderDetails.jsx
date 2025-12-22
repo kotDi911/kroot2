@@ -5,14 +5,17 @@ export const loaderDetails = async ({params}) => {
     const fetchData = async (url) => {
         try {
             const res = await fetch(
-                url + params.name.replace(/[&'\s_]+/g, '-')
-                    .replace(/-+/g, '-')
+                url + params.name.replace(/[&'\s_]+/g, '-').replace(/-+/g, '-')
             );
             if (!res.ok) throw new Error('Failed to fetch data');
             const result = await res.json();
             if (result.length === 0) throw new Error('Project not found');
             let data = {}
             result.find(item => data = item.acf);
+            result.find(item => {
+                console.log(data)
+                console.log(item.acf)
+            });
             return data;
         } catch (err) {
             return null;

@@ -1,6 +1,6 @@
 .nav {
   &__cont {
-    padding: 2rem;
+    //padding: 2rem;
     //background: white;
     //border-radius: 25px;
     margin: 2rem 0 1rem;
@@ -34,26 +34,67 @@
   &__cards {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    padding: 0 2rem;
+    //padding: 0 2rem;
   }
 
   &__card {
-    background: #313336;
-    padding: 1rem 2rem;
+    background: #31333659;
+    padding: 2rem 2rem;
     //border-radius: 25px;
+    &-text{
+      padding: .5rem 1.5rem;
+    }
   }
 }
-
+.vacancy-ul {
+  //list-style: none;
+  padding-left: 26px;
+  margin: 0;
+}
 .apps {
-  &__cont {
-    margin: 2rem 2rem 0 2rem;
-    padding: 2rem 0;
-    //background: white;
-    //border-radius: 25px;
-  }
-
   &__img {
     width: 96px;
     height: 96px;
   }
+}
+
+/* Заголовок */
+.accordion-trigger {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Стрелка */
+.accordion-arrow {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-left: 12px;
+}
+
+/* Поворот стрелки */
+.accordion-trigger.open .accordion-arrow {
+  transform: rotate(-135deg);
+}
+
+/* Контейнер аккордеона */
+.accordion {
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  opacity: 0;
+}
+
+/* Открыто */
+.accordion.open {
+  opacity: 1;
+}
+
+/* Внутренний отступ */
+.accordion-inner {
+  padding-top: 12px;
 }

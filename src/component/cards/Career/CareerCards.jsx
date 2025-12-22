@@ -12,9 +12,17 @@ const CareerCards = () => {
     const ua = useCareer((store) => store.ua);
     const eu = useCareer((store) => store.eu);
     const error = useCareer((store) => store.error);
+    const setError = useCareer((store) => store.setError);
     const [cards, setCards] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    const ulFind = (arr) => {
+        if (!arr.length) {
+            setError(true)
+        } else {
+            setError(false)
+        }
+    }
     useEffect(() => {
         if (vacancy.length === 0) {
             setLoading(true);
@@ -25,12 +33,15 @@ const CareerCards = () => {
     useEffect(() => {
         switch (name) {
             case "us":
+                ulFind(us);
                 setCards(us);
                 break;
             case "ua":
+                ulFind(ua);
                 setCards(ua);
                 break;
             case "eu":
+                ulFind(eu);
                 setCards(eu);
                 break;
             default:
@@ -38,9 +49,8 @@ const CareerCards = () => {
                 break;
         }
     }, [name, us, ua, eu]);
-
     return (
-        <div className="career__cards">
+        <section className="career__cards p-25r">
             {loading ?
                 <Loader/>
                 :
@@ -49,7 +59,7 @@ const CareerCards = () => {
                     :
                     cards.length > 0 && cards.map((card, i) => <CareerCard key={i} {...card} />)
             }
-        </div>
+        </section>
     )
 }
 export default CareerCards

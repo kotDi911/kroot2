@@ -43,11 +43,11 @@ const GetInTouch = () => {
                 <meta property="og:url" content="https://www.thekroot.com/get_in_touch/" />
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
-            <section className="container-48 relative">
+            <section className="container-48 relative p_top">
                 <h1 className="h1 mb-52">Get in <span className="gray">touch</span></h1>
                 <p className="regular text-center gray">{descForm}</p>
                 <div className="form__cont">
-                    <div className="form__social flex">
+                    <div className="form__social flex gap-16">
                         <Social props="light"/>
                     </div>
                     <GetInTouchForm sentMail={sentMail}/>

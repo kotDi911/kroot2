@@ -1,20 +1,48 @@
-import Button from "../../Button";
-import {Link} from "react-router-dom";
+import {useRef, useState} from "react";
+import Accordion from "./Accordion";
 
-const CareerCard = ({title, description, err}) => {
+const CareerCard = ({title, mustknow, responsibilities, err}) => {
+    const [open, setOpen] = useState(false);
+    const contentRef = useRef(null);
+
+    if (err) {
+        return (
+            <article className="career__card hover__card flex mt-16 base">
+                <p className="fs-14 gray" style={{margin: "4% auto"}}>
+                    {err}
+                </p>
+            </article>
+        );
+    }
+
     return (
-        !err ?
-            <Link className="career__card hover__card flex end base mt-16" to="/">
-                <div className="flex col w-100">
-                    <p className="fs-14 orange">{title}</p>
-                    <p className="regular gray mt-16" style={{cursor: "pointer"}}>{description}</p>
+        <article className="career__card flex col w-100 mt-16">
+            <h2
+                className={`orange accordion-trigger ${open ? "open" : ""}`}
+                onClick={() => setOpen(!open)}
+                role="button"
+                aria-expanded={open}
+                tabIndex={0}
+            >
+                {title}
+                <span className="accordion-arrow"/>
+            </h2>
+
+            <div
+                ref={contentRef}
+                className={`accordion ${open ? "open" : ""}`}
+                style={{
+                    maxHeight: open
+                        ? `${contentRef.current?.scrollHeight}px`
+                        : "0px",
+                }}
+            >
+                <div className="accordion-inner">
+                    {responsibilities.li && <Accordion title="Responsibilities" obj={responsibilities}/>}
+                    {mustknow.li && <Accordion title="Must Know / Be Able To" obj={mustknow}/>}
                 </div>
-                <Button color={false}/>
-            </Link>
-            :
-            <div className="career__card hover__card flex mt-16 base">
-                <p className="fs-14 gray" style={{margin: "4% auto"}}>{err}</p>
             </div>
+        </article>
     )
 }
 export default CareerCard

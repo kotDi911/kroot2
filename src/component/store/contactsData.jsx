@@ -22,7 +22,7 @@ export const useContacts = create(() => ({
                     title: "Contacts",
                     text: "Los Angeles U.S",
                     options: [
-                        {text: "Anatoly Kuzmytskyi"},
+                        {text: "Anatoly (Tomash) Kuzmytskyi"},
                         {text: "Executive Producer / Creative"},
                     ],
                     contacts: [

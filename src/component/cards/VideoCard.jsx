@@ -12,7 +12,6 @@ const VideoCard = ({props}) => {
             setText(errText)
         }
     }, [name, url]);
-console.log(props)
     return (
         <Link to={url === "" ? "/error" : url}
               // target="_blank"

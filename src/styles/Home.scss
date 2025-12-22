@@ -79,13 +79,13 @@
 //}
 
 /* Затемнение + blur */
- .darken::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, var(--overlay-opacity));
-  backdrop-filter: blur(var(--overlay-blur));
-  transition: backdrop-filter 0.1s linear;
-  pointer-events: none;
-  z-index: 5;
-}
+// .darken::before {
+//  content: "";
+//  position: absolute;
+//  inset: 0;
+//  background: rgba(0, 0, 0, var(--overlay-opacity));
+//  backdrop-filter: blur(var(--overlay-blur));
+//  transition: backdrop-filter 0.1s linear;
+//  pointer-events: none;
+//  z-index: 5;
+//}

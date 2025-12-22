@@ -1,12 +1,17 @@
 .contacts {
   min-height: 82vh;
+  &__cont{
+    gap: 12px;
+  }
   &__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     //grid-template-rows: auto;
-    gap: 32px;
+    column-gap: 16px;
+    row-gap: 32px;
     margin-top: 2rem;
     &-card{
+      padding: 20px 10px;
       display: flex;
       flex-direction: row;
       gap: 2rem;
@@ -14,13 +19,12 @@
     }
   }
 
-  &__text, .contacts__photo {
-    //background: white;
-    //border-radius: 25px;
+  & .social__cont{
+    margin-right: 12px;
   }
   &__text {
     //padding: 2.5rem 2rem;
-    width: 60%;
+    width: 70%;
   }
 
   &__photo {

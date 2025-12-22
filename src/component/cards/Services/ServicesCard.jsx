@@ -21,7 +21,7 @@ const ServicesCard = ({props, count}) => {
                 {desc}
             </p>
             {/*<div className="services__grid">*/}
-            <div className={`flex col ${pos}`}>
+            <div className={`services__options flex col ${pos}`}>
                 {options.map(item => <ServicesOptions key={item.id} props={item} />)}
             </div>
         </div>

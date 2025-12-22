@@ -49,12 +49,13 @@ const Header = () => {
                     <span className="burger-span"></span>
                 </button>
                 <nav className={`menu ${isMenuOpen ? "open" : "close"}`}>
-                    <Link className="menu__item" to="/about" onClick={() => headName()}>ABOUT</Link>
-                    <Link className="menu__item" to="/projects" onClick={() => headName()}>PROJECTS</Link>
-                    <Link className="menu__item" to="/career" onClick={() => headName()}>CAREER</Link>
-                    <Link className="menu__item" to="/contacts" onClick={() => headName()}>CONTACTS</Link>
                     <Link className="menu__item" to="/get_in_touch" onClick={() => headName()}>Start your project</Link>
-                    <div className="social flex mt-32 space-b">
+                    <br/>
+                    <Link className="menu__item" to="/projects" onClick={() => headName()}>Our work</Link>
+                    <Link className="menu__item" to="/about" onClick={() => headName()}>About us</Link>
+                    <Link className="menu__item" to="/career" onClick={() => headName()}>Carer</Link>
+                    <Link className="menu__item" to="/contacts" onClick={() => headName()}>Contact</Link>
+                    <div className="social flex mt-32 space-evently">
                         <Social props="light"/>
                     </div>
                 </nav>

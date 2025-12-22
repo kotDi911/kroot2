@@ -1,5 +1,4 @@
-import {NavLink, useLocation} from "react-router-dom";
-import {useEffect} from "react";
+import {NavLink} from "react-router-dom";
 
 const links = [
     {
@@ -16,24 +15,13 @@ const links = [
     }
 ];
 
-const desc = "Once you become a part of our team, you will discover" +
-    " a new perspective on the world and begin to think differently." +
-    " We teach not only creation but also self-improvement! " +
-    "You are unique! Join our 'Generation Kroot' courses and start your path to success!"
-
+const desc = "We work globally with distributed teams. " +
+    "Each role below includes core knowledge, skills, and expectations required to work with us."
 
 const CareerNav = () => {
-    // const {pathname} = useLocation();
-
-    // useEffect(() => {
-    //     const currentLink = links.find(link => pathname.includes(link.path));
-    //     if (currentLink) {
-    //         setDesc(currentLink.desc);
-    //     }
-    // }, [pathname]);
 
     return (
-        <div className="nav__cont">
+        <section className="nav__cont p-25r">
             <h3 className="h3 text-center gray">Location</h3>
             <nav className="nav flex space-a mt-16">
                 {links.map((link, i) => (
@@ -42,7 +30,6 @@ const CareerNav = () => {
                         className={({isActive}) => isActive ? "nav__btn active" : "nav__btn"}
                         key={i}
                     >
-                        {/*<span className="btn-bg"/>*/}
                         {link.name}
                     </NavLink>
                 ))}
@@ -50,7 +37,7 @@ const CareerNav = () => {
             <p className="nav__text regular gray mt-32">
                 {desc}
             </p>
-        </div>
+        </section>
     );
 };
 

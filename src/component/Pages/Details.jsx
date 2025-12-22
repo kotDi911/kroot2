@@ -48,7 +48,7 @@ const Details = () => {
                 },
             ];
     }, [buttons_url, folderUrl]);
-
+console.log(project)
     const getMainImages = useMemo(() => {
         return Array.from({length: main_imgs}, (_, i) => {
             const img = `${folderUrl}/images/main${i + 1}.jpg`;
@@ -70,15 +70,15 @@ const Details = () => {
                 <meta content={`Project ${project_name}`} property="twitter:title"/>
                 <meta name="description" content={`Project ${project_name}`}/>
             </Helmet>
-            <section className="container-80 p_top">
+            <section className="container-80 mt-80">
                 <Title title={project_name}/>
-                <p className="regular gray mt-16">{description}</p>
+                {/*<p className="regular gray mt-16">{description}</p>*/}
                 <Images getImages={getMainImages} name={project_name}/>
                 <Gallery images={gallery_imgs} path={folderUrl}/>
                 <Options data={getDataArr}/>
             </section>
             <section className="container-80">
-                <div className="flex gap-16 mt-112 p-25r">
+                <div className="about__grid-cards flex gap-16 mt-112 p-25r">
                     {getBtnVideo.map((card, i) => <VideoCardDetails key={i} props={card}/>)}
                 </div>
             </section>

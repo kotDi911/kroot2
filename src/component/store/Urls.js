@@ -8,6 +8,5 @@ export const useUrl = create(() => ({
     URL: "https://thekroot.com/",
     URL_API: "https://api.thekroot.com/wp-json/acf/v3/",
     API_PRIORITY_PROJECTS: "https://api.thekroot.com/wp-json/acf/v3/priority_project?per_page=18",
-    // API_PRIORITY_PROJECTS: "https://api.thekroot.com/wp-json/acf/v3/project_test",
-    API_PROJECTS: "https://api.thekroot.com/wp-json/acf/v3/project?per_page=3&page=", //?per_page=9&page=
+    API_PROJECTS: "https://api.thekroot.com/wp-json/acf/v3/project?per_page=6&page=", //?per_page=9&page=
 }))

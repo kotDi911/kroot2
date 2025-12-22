@@ -13,10 +13,10 @@ const ToggleFilterBtn = ({filter, setFilter}) => {
 
     return (
         <div className="relative">
-            <div className="filter__btn filter__btn-toggle filter__btn-active gray" onClick={handleToggle}>
-                <span className="filter__bg btn-bg"></span>
+            <div  className={`${isToggle ? "rotate" : ""} filter__btn filter__btn-toggle filter__btn-active gray`} onClick={handleToggle}>
+                <span className="filter__bg btn-bg"/>
                 <div className="filter__text">{filter}</div>
-                <img src={filterArrow} alt="filter arrow" className={`${isToggle ? "rotate" : ""} filter__img`}/>
+                <span className="arrow"/>
             </div>
             {
                 isToggle &&

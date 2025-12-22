@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import RouterApp from "./component/router/RouterApp";
-import {createHashRouter as Router, Navigate, RouterProvider} from "react-router-dom";
-// import {createBrowserRouter as Router, Navigate, RouterProvider} from "react-router-dom";
+// import {createHashRouter as Router, Navigate, RouterProvider} from "react-router-dom";
+import {createBrowserRouter as Router, Navigate, RouterProvider} from "react-router-dom";
 import Home from "./component/Pages/Home";
 import ErrorPage from "./component/Pages/ErrorPage";
 import Projects from "./component/Pages/Projects";
@@ -53,6 +53,10 @@ const router = Router([
         path: "/career",
         element: <RouterApp props={<Career/>}/>,
         children: [
+            {
+                index: true,
+                element: <Navigate to="us" replace />,
+            },
             {
                 path: ":name",
                 element: <CareerCards/>,

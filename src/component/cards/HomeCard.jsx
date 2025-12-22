@@ -21,7 +21,7 @@ const HomeCard = ({props}) => {
             {!title ?
                 <VideoSource path={path} name={name} className={`home-video`} text={text} width={availableWidths}/>
                 :
-                <div className="home-video relative darken">
+                <div className="home-video relative">
                     <img src={img} alt="name" className="home-img"/>
                     <div className="home__card-title flex col absolute space-b ">
                         <h3 className="h3 white">

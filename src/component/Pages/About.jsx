@@ -34,27 +34,27 @@ const About = () => {
             </Helmet>
             <MainImgCard/>
             <section className="container-64 flex col mb-32 relative">
-                <div className="absolute flex col nom space-b">
+                {/*<div className="absolute flex col nom space-b">*/}
                     <Nominations/>
                     <Skills/>
-                </div>
-                <VideoSource path={URL} name="g-kroot" className="home-video" width={availableWidths}/>
+                {/*</div>*/}
+                {/*<VideoSource path={URL} name="g-kroot" className="home-video" width={availableWidths}/>*/}
             </section>
             <section className="container-64 relative">
                 <OurServices/>
                 <VideoSource path={URL2} name="roto" className="home-video" width={availableWidths}/>
             </section>
-            <section className="container-64 p-25r mt-32">
-                <h2 className="h2 text-center">
-                    Locations
-                </h2>
-                <img className="img mb-52 mt-32" src={map} alt=""/>
-            </section>
+            {/*<section className="container-64 p-25r mt-32">*/}
+            {/*    <h2 className="h2 text-center">*/}
+            {/*        Locations*/}
+            {/*    </h2>*/}
+            {/*    <img className="img mb-52 mt-32" src={map} alt=""/>*/}
+            {/*</section>*/}
             {/*<section className="container-64">*/}
             {/*    <AboutTeam/>*/}
             {/*</section>*/}
             <section className="container-64">
-                <div className="flex gap-16 mt-112 w-100 p-25r">
+                <div className="about__grid-cards flex gap-16 mt-112 w-100 p-25r">
                     {cards.map((card, i) =>
                        <VideoCard key={i} props={card}/>
                     )}

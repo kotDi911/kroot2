@@ -7,7 +7,7 @@ const pickBestVersion = (versions, containerWidth) => {
     );
 };
 
-const VideoSource = ({path, name, className, text, width}) => {
+const VideoSource = ({path, name, className, text, width, url}) => {
     const [videoWidth, setVideoWidth] = useState(1080);
     const [isVisible, setIsVisible] = useState(false);
     const [availableWidths, setAvailableWidths] = useState(width || [1080])
@@ -34,20 +34,23 @@ const VideoSource = ({path, name, className, text, width}) => {
 
     // Обновляем ширину видео при изменении размера контейнера
     useEffect(() => {
-        if (!containerRef.current) return;
+        const el = containerRef.current;
+        if (!el) return;
 
         const updateVideoWidth = () => {
-            const containerWidth = containerRef.current.offsetWidth; // ширина карточки
+            if (!el) return;
+            const containerWidth = el.offsetWidth;
             const best = pickBestVersion(availableWidths, containerWidth);
             setVideoWidth(best);
         };
 
-        updateVideoWidth(); // первичная установка
+        updateVideoWidth();
 
         const ro = new ResizeObserver(updateVideoWidth);
-        ro.observe(containerRef.current);
+        ro.observe(el);
+
         return () => ro.disconnect();
-    }, []);
+    }, [availableWidths]);
 
     const poster = `${path}/${name}_${videoWidth}.jpg`;
     // console.log(`${path}/${name}_${videoWidth}.mp4`)
@@ -64,7 +67,7 @@ const VideoSource = ({path, name, className, text, width}) => {
                     controls={false}
                     preload="none"
                 >
-                    <source src={`${path}/${name}_${videoWidth}.webm`} type="video/webm"/>
+                    {/*<source src={`${path}/${name}_${videoWidth}.webm`} type="video/webm"/>*/}
                     <source src={`${path}/${name}_${videoWidth}.mp4`} type="video/mp4"/>
                 </video>
             )}

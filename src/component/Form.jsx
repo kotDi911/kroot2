@@ -121,7 +121,7 @@ const GetInTouchForm = ({sentMail}) => {
     })
     return (
         <form className="form flex col" onSubmit={handleSubmit}>
-            <div className="flex col-gap">
+            <div className="flex col-gap full-name">
                 <Input
                     id="firstName"
                     name="firstName"
@@ -183,7 +183,7 @@ const GetInTouchForm = ({sentMail}) => {
                 touched={touched.company}
                 errors={errors.company}
             />
-            <div className="flex col-gap">
+            <div className="flex col-gap full-name">
                 <Input
                     id="budget"
                     name="budget"
@@ -209,7 +209,7 @@ const GetInTouchForm = ({sentMail}) => {
                     errors={errors.timeline}
                 />
             </div>
-            <div className="flex col-gap">
+            <div className="flex col-gap full-name">
                 <Input
                     id="startDate"
                     name="startDate"

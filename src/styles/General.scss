@@ -6,6 +6,7 @@ $text: #d3d3d3;
 $BG: rgb(10, 10, 10);
 $border: #7f8081;
 $hover: rgba(222, 226, 229, 0.55);
+$loader: #B2FFF2;
 $darkgray: rgb(105, 105, 105);
 $active: rgba(222, 226, 229, 0.7);
 
@@ -97,6 +98,9 @@ code {
 .space-a {
   justify-content: space-around;
 }
+.space-evently{
+  justify-content: space-evenly;
+}
 .b-0{
   bottom: 0;
 }
@@ -112,6 +116,9 @@ code {
 .mt-16 {
   margin-top: 16px;
 }
+.mt-8 {
+  margin-top: 8px;
+}
 
 .mt-32 {
   margin-top: 32px;
@@ -120,7 +127,9 @@ code {
 .mt-52 {
   margin-top: 52px;
 }
-
+.mt-80 {
+  margin-top: 80px;
+}
 .mt-112 {
   margin-top: 112px;
 }
@@ -164,7 +173,7 @@ code {
   padding: 50px;
 }
 .p_top {
-  padding-top: 12px;
+  padding-top: 10px;
 }
 .w-100 {
   width: 100%;
@@ -201,7 +210,9 @@ a {
 //  color: $black;
 //  border-color: $black;
 //}
-
+.numb{
+  font-size: 60px;
+}
 .h1 {
   font-size: 64px;
   color: $big_text;
@@ -299,8 +310,10 @@ a {
   padding: 20px 0;
 
   &-mini {
-    width: 100%;
     cursor: default;
+    &-cont{
+      width: 100%;
+    }
     & .logo-img{
       width: 48px;
     }
@@ -340,6 +353,16 @@ a {
   overflow: hidden;       /* чтобы видео не вылазило */
   position: relative;
 }
+.home-video::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background-image: url("../../public/assets/noise6.png");
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
 .video{
   width: 100%;
   height: 100%;
@@ -347,6 +370,7 @@ a {
   object-fit: cover;
   object-position: center;
   display: block;
+  filter: contrast(1.05) brightness(1.02);
 }
 
 .thumb-wrap {
@@ -392,6 +416,9 @@ a {
   border: 3px solid white;
   border-radius: 50%;
   margin-right: 6px;
+  &.bg-black{
+    border-color: black !important;
+  }
 }
 
 .mark {
@@ -481,6 +508,7 @@ a {
 }
 
 .social {
+  gap: 12px;
   &__cont {
     position: relative;
     display: flex;
@@ -491,11 +519,6 @@ a {
     border: 1px solid $text;
     border-radius: 50%;
     z-index: 1;
-
-    &:not(:last-child) {
-      margin-right: 1rem;
-    }
-
     & .light ~ .social__img {
       fill: white;
     }
